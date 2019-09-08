@@ -2,6 +2,7 @@ import React from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import {Header} from "./Header";
 import {Countries} from "./Countries";
+import {Country} from "./Country";
 import styled from "styled-components";
 
 const Content = styled.div`
@@ -18,6 +19,7 @@ const AppRouter = () => {
                 <Content>
                     <Route path="/" exact component={() => <div />} />
                     <Route path="/countries" component={Countries} exact />
+                    <Route path="/countries/:code" component={Country} exact />
                 </Content>
             </div>
         </Router>

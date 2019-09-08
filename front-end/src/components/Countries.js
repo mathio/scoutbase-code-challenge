@@ -19,7 +19,7 @@ export const Countries = () => {
                     <ul>
                         {data.countries.map(country => (
                             <CountryItem key={country.code}>
-                                <h3>{country.name}</h3>
+                                <h3><Link to={`/countries/${country.code}`}>{country.name}</Link></h3>
                                 <p><strong>Continent:</strong> {country.continent.name}</p>
                                 <p><strong>Languages:</strong></p>
                                 <ul>

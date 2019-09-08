@@ -15,7 +15,7 @@ Instructions:
 2. Add a router with routes:
   - `/` - for displaying basic links for the other routes
   - `/countries` - for requesting GraphQL API and rendering the list
-  - `/countries/(:code)` - for requesting GraphQL API and rendering the properties of a continent
+  - `/countries/(:code)` - for requesting GraphQL API and rendering the properties of a country
 3. Design is totally by you.
 4. Countries list at `/countries` must contain the list of countries and the languages spoken in that country. Both in English and native languages. It should also contain the continent it is located in.
 5. `/countries/(:code)` must render the currency and a area code (phone) of that country.
