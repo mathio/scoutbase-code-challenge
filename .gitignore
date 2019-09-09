@@ -1,9 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# front-end
-/front-end/node_modules
-/front-end/coverage
-/front-end/build
+node_modules/
+coverage/
+build/
 
 # misc
 .DS_Store

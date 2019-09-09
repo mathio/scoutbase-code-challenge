@@ -18,11 +18,11 @@ Instructions:
       name
       birthday
       country
-      directors {
-        name
-        birthday
-        country
-      }
+    }
+    directors {
+      name
+      birthday
+      country
     }
   }
 }
