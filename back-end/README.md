@@ -29,6 +29,7 @@ Instructions:
 ```
 
 4. Add support for the following mutation:
+
 ```graphql
 mutation createUser($username: String, $password: String) {
   createUser(username: $username, password: $password) {
@@ -42,6 +43,7 @@ mutation createUser($username: String, $password: String) {
 ```
 
 5. To expand on the number four, add a mutation-based authentication that accepts:
+
 ```graphql
 mutation login($username: String, $password: String) {
   login(username: $username, password: $password) {
@@ -81,3 +83,31 @@ mutation login($username: String, $password: String) {
 7. `/graphql` must be accessible for external clients.
 
 8. End.
+
+
+# Running and building
+
+You will need Postgres database connection string in env variable `DATABASE_URL` 
+with schema from [schema.sql](./database/schema.sql).
+
+
+Run the project for development and watch for changes. 
+
+```
+yarn start
+```
+
+Run the project in production:
+
+```
+node index.js
+```
+
+Import movies into database:
+
+```
+yarn import-movies
+``` 
+
+Import command will truncate database and import "now playing" movies from themoviedb.org API. 
+[You will need API key](https://developers.themoviedb.org/3/getting-started) in env variable `THEMOVIEDB_TOKEN`. 

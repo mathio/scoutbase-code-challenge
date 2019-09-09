@@ -17,5 +17,9 @@
   "scripts": {
     "start": "nodemon index.js",
     "import-movies": "node import.js"
+  },
+  "engines": {
+    "node": "11.x",
+    "yarn": "1.x"
   }
 }

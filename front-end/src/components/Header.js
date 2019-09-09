@@ -11,6 +11,8 @@ const Wrapper = styled.div`
 const Title = styled.h1`
     text-align: center;
     color: navy;
+    
+    a {color: navy; text-decoration: none}
 `;
 
 const Menu = styled.ul`
@@ -29,7 +31,7 @@ const MenuItem = styled.li`
 
 export const Header = () => (
     <Wrapper>
-        <Title>Scoutbase Code Challenge</Title>
+        <Title><a href="/">Scoutbase Code Challenge</a></Title>
         <Menu>
             <MenuItem>
                 <Link to="/app">Home</Link>

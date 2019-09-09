@@ -37,5 +37,9 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "/app"
+  "homepage": "/app",
+  "engines": {
+    "node": "11.x",
+    "yarn": "1.x"
+  }
 }

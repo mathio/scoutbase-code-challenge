@@ -5,7 +5,7 @@ const uuidv1 = require("uuid/v1");
 const path = require("path");
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL + "?ssl=true"
@@ -24,8 +24,8 @@ app.get("/", (req, res) => res.send(`
     </ul>
 `));
 
-app.use("/app/static", express.static("../front-end/build/static"));
-app.use("/app*", express.static("../front-end/build/index.html"));
+app.use("/app/static", express.static(`${__dirname}/../front-end/build/static`));
+app.use("/app*", express.static(`${__dirname}/../front-end/build/index.html`));
 
 const typeDefs = gql`
   type Movie {
@@ -174,6 +174,8 @@ const resolvers = {
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    introspection: true,
+    playground: true,
     context: async ({req}) => {
         const token = req.headers.token;
 

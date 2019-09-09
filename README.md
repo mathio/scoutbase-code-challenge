@@ -21,10 +21,32 @@ You have received this directory within the .zip archive.
   2. `kuka` username – Kuanysh, consultant
 5. Expect a response within 10 working days after sharing the task, you’ll be contacted with the info you’ve provided during initial registration.
 
-## Run the project
 
-To run the project for development run:
+# Development
+
+Each package is developed separately. See respective README files:
+
+* [front-end/README](./front-end/README.md)
+* [back-end/README](./back-end/README.md)
+
+
+# Deployment
+
+When the app is deployed to heroku build script is run:
 
 ```
-yarn start
+yarn heroku-postbuild
 ```
+
+The script installs dependecies for both *front-end* and *back-end*. The it builds *front-end* using `yarn build`.
+
+Heroku dyno runs `node ./back-end/index.js` to serve both *front-end* and *back-end*.
+
+# Heroku deployment
+
+App URL: [scoutbase-code-challenge-28.herokuapp.com](https://scoutbase-code-challenge-28.herokuapp.com/)
+
+The *front-end* deployed on Heroku allows you to 
+[log in using existing credentials](https://scoutbase-code-challenge-28.herokuapp.com/app/movies). 
+You can create your credentials using the `login` mutation in the GraphQL playground or use 
+default ones pre-filled in the form.
