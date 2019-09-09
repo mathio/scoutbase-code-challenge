@@ -4,12 +4,17 @@
   "main": "index.js",
   "license": "UNLICENSED",
   "dependencies": {
+    "apollo-server": "^2.9.3",
+    "apollo-server-express": "^2.9.3",
+    "express": "^4.17.1",
+    "graphql": "^14.5.4",
     "nodemon": "^1.19.2",
     "pg": "^7.12.1",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7"
   },
   "scripts": {
+    "start": "nodemon index.js",
     "import-movies": "node import.js"
   }
 }
