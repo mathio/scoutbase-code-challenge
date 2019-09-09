@@ -68,11 +68,11 @@ mutation login($username: String, $password: String) {
       name
       birthday
       country
-      directors {
-        name
-        birthday
-        country
-      }
+    }
+    directors {
+      name
+      birthday
+      country
     }
   }
 }
