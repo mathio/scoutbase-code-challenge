@@ -20,7 +20,11 @@ const Menu = styled.ul`
 
 const MenuItem = styled.li`
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 20px;
+    
+    &:first-child {
+        margin-left: 0;
+    }
 `;
 
 export const Header = () => (
@@ -28,10 +32,13 @@ export const Header = () => (
         <Title>Scoutbase Code Challenge</Title>
         <Menu>
             <MenuItem>
-                <Link to="/">Home</Link>
+                <Link to="/app">Home</Link>
             </MenuItem>
             <MenuItem>
-                <Link to="/countries">Countries</Link>
+                <Link to="/app/countries">Countries</Link>
+            </MenuItem>
+            <MenuItem>
+                <Link to="/app/movies">Movies</Link>
             </MenuItem>
         </Menu>
     </Wrapper>

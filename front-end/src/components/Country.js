@@ -1,5 +1,5 @@
 import React from "react";
-import {GET_COUNTRY_DETAILS, GraphqlQuery} from "../utils/graphqlClient";
+import {GET_COUNTRY_DETAILS, GraphqlQuery} from "../utils/graphqlClientCountries";
 
 export const Country = ({match: {params: {code}}}) => {
     return (

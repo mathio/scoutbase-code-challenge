@@ -2,6 +2,7 @@ const express = require("express");
 const { Pool } = require("pg");
 const { ApolloServer, gql } = require("apollo-server-express");
 const uuidv1 = require("uuid/v1");
+const path = require("path");
 
 const app = express();
 const port = 3001;
@@ -14,9 +15,17 @@ const getUserToken = () => uuidv1();
 
 const getScoutbaseRating = () => Math.floor((Math.random() * 5 + 5) * 100) / 100;
 
-const path = "/graphql";
+const apiPath = "/graphql";
 
-app.get("/", (req, res) => res.send(`<a href="${path}">GraphQL API</a>`));
+app.get("/", (req, res) => res.send(`
+    <ul>
+        <li><a href="/app">Front-end</a></li>
+        <li><a href="${apiPath}">GraphQL API</a></li>
+    </ul>
+`));
+
+app.use("/app/static", express.static("../front-end/build/static"));
+app.use("/app*", express.static("../front-end/build/index.html"));
 
 const typeDefs = gql`
   type Movie {
@@ -181,6 +190,6 @@ const server = new ApolloServer({
     },
 });
 
-server.applyMiddleware({ app, path });
+server.applyMiddleware({ app, path: apiPath });
 
 app.listen(port, () => console.log(`back-end @ ${port}`));
